@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.gstatic.com/s/poppins/v21/pxiGyp8kv8JHgFVrLPTucHtA.woff2">
+    <title>Portfolio Website</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        border: none;
+        outline: none;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    html {
+        font-size: 62.5%;
+    }
+
+    body {
+        width: 100%;
+        height: 100vh;
+        overflow-x: hidden;
+        background-color: black;
+        color: white;
+    }
+
+    header {
+        margin-top: 20px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 1rem 9%;
+        background-color: transparent;
+        filter: drop-shadow(10px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100;
+    }
+
+    .logo {
+        font-size: 3rem;
+        color: #54ca4e;
+        font-weight: 800;
+        cursor: pointer;
+        transition: 0.5s ease-in-out;
+    }
+
+    .logo:hover {
+        transform: scale(1.1);
+    }
+
+    nav a {
+        font-size: 1.8rem;
+        color: white;
+        margin-left: 4rem;
+        font-weight: 500;
+        transition: 0.3s ease;
+        border-bottom: 3px solid transparent;
+    }
+
+    nav a:hover,
+    nav a.active {
+        color: #54ca4e;
+        border-bottom: 3px solid #54ca4e;
+    }
+
+    header {
+        margin-top: 20px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 1rem 9%;
+        background-color: transparent;
+        filter: drop-shadow(10px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100;
+    }
+
+    .logo {
+        font-size: 3rem;
+        color: #54ca4e;
+        font-weight: 800;
+        cursor: pointer;
+        transition: 0.5s ease-in-out;
+    }
+
+    .logo:hover {
+        transform: scale(1.1);
+    }
+
+    nav a {
+        font-size: 1.8rem;
+        color: white;
+        margin-left: 4rem;
+        font-weight: 500;
+        transition: 0.3s ease;
+        border-bottom: 3px solid transparent;
+    }
+
+    nav a:hover,
+    nav a.active {
+        color: #54ca4e;
+        border-bottom: 3px solid #54ca4e;
+    }
+
+    @media(max-width:995px) {
+        nav {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 30%;
+            border-left: 3px solid #54ca4e;
+            border-bottom: 3px solid #54ca4e;
+            border-bottom-left-radius: 2rem;
+            padding: 1rem solid;
+            background-color: #161616;
+            border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        nav a {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            font-size: 1.7rem;
+            margin: 3rem 0;
+        }
+
+        nav a:hover,
+        nav a.active {
+            padding: 1rem;
+            border-radius: 0.5rem;
+            border-bottom: 0.5rem solid #54ca4e;
+        }
+
+    }
+
+    @media(max-width:540px) {
+       
+       nav a {
+            font-size: 1.4rem;
+       }
+   }
+    section {
+        min-height: 100vh;
+        padding: 5rem 9% 5rem;
+    }
+
+    .home {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8rem;
+        background-color: black;
+    }
+
+    .home .home-content h1 {
+        font-size: 6rem;
+        font-weight: 700;
+        line-height: 1.3;
+    }
+
+    span {
+        color: #54ca4e;
+    }
+
+    .home-content h3 {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+    }
+
+    .home-content p {
+        font-size: 1.7rem;
+    }
+
+    .home-img img {
+        position: relative;
+        width: 32vw;
+        height: 70vh;
+        border-radius: 50%;
+        cursor: pointer;
+        box-shadow: 0px 0px 30px #ffffff;
+        transition: 1s ease-in-out;
+    }
+
+    .home-img img:hover {
+        transform: scale(1.1);
+        box-shadow: 0px 0px 50px #ffffff;
+    }
+
+    .social-icons a {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 4rem;
+        height: 4rem;
+        background-color: transparent;
+        border: 0.2rem solid #54ca4e;
+        font-size: 2rem;
+        border-radius: 50%;
+        margin: 3rem 1.5rem 3rem 0;
+        transition: 0.3s ease;
+        color: #54ca4e;
+    }
+
+    .social-icons a:hover {
+        color: black;
+        transform: scale(1.3) translateY(-5px);
+        background-color: #54ca4e;
+        box-shadow: 0 0 25px #54ca4e;
+    }
+
+    .typing-text {
+        font-size: 34px;
+        font-weight: 600;
+        min-width: 280px;
+    }
+
+    .typing-text span {
+        position: relative;
+    }
+
+    .typing-text span::before {
+        content: "software Developer";
+        color: #54ca4e;
+        animation: words 20s infinite;
+    }
+
+    .typing-text span::after {
+        content: "";
+        background-color: black;
+        position: absolute;
+        width: calc(100% + 8px);
+        height: 100%;
+        border-left: 3px solid black;
+        right: -8;
+        animation: cursor 0.6s infinite;
+    }
+
+    @keyframes cursor {
+        to {
+            border-left: 3px solid #54ca4e;
+        }
+    }
+
+    @keyframes words {
+
+        0%,
+        20% {
+            content: "Full Stack Developer";
+        }
+
+        21%,
+        40% {
+            content: "CS Student";
+        }
+
+        41%,
+        60% {
+            content: "Problem Solver";
+        }
+
+        61%,
+        80% {
+            content: "Tech Enthusiast";
+        }
+
+        81%,
+        100% {
+            content: "Quick Learner";
+        }
+    }
+
+    @media (max-width: 1000px) {
+        .home {
+            gap: 4rem;
+        }
+    }
+
+    @media(max-width:995px) {
+        .home {
+            flex-direction: column;
+            margin: 5rem 4rem;
+        }
+
+        .home .home-content h3 {
+            font-size: 2.5rem;
+        }
+
+        .home-content h1 {
+            font-size: 5rem;
+        }
+
+        .home-img img {
+            width: 50vw;
+            margin-top: 4rem;
+            height: 40vh;
+        }
+
+        .typing-text span::after {
+            width: 5px;
+        }
+
+        @media (max-width: 500px) {
+            .home-img img {
+                width: 50vw;
+                height: 30vh;
+
+            }
+        }
+    }
+</style>
+
+<body>
+    <header>
+        <a href="#" class="logo">M. Tayyab</a>
+
+        <nav>
+            <a href="#" class="active"> Home</a>
+            <a href="#">Personal Skills</a>
+            <a href="#">Hobbies</a>
+            <a href="#">Image Gallery</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+    <section class="home">
+        <div class="home-img">
+            <img src="./images/profile.jpg" alt="">
+        </div>
+        <div class="home-content">
+            <h1>Hi, It's <span>Tayyab</span></h1>
+            <h3 class="typing-text">I'm a <span></span></h3>
+            <p>
+                I'm Muhammad Tayyab Rizwan, a passionate web developer and computer science student at NUST Pakistan.
+                I love building creative and interactive web experiences. With a strong foundation in HTML, CSS, and
+                JavaScript,
+                I continuously explore new technologies to enhance my skills. Let's build something amazing together!
+            </p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/mtayyab193/" target="_blank"><i
+                        class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/M-Tayyab-193" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.instagram.com/m_tayyab193/" target="_blank"><i
+                        class="fa-brands fa-instagram"></i></a>
+                <a href="https://wa.me/+923438582328" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
